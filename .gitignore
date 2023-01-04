@@ -21,3 +21,83 @@
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+
+
+.image {
+    height: 50vh;
+    width: 100vw;
+    display: inline-block;
+    position: relative;
+    transition: all 0.3s;
+}
+
+.image::after{
+content: '';
+position: absolute;
+width: 100%;
+height: 100%;
+z-index: 0;
+box-shadow: inset 70px 90px 150px #000,
+inset -70px -90px 150px #000;
+background: rgba(0,0,0,0.5);
+top: 0;
+left: 0;
+}
+
+.image h2{
+    position: absolute;
+    z-index: 3;
+    bottom: 8%;
+    left: 2%;
+}
+.shadow{
+    box-shadow: rgba(0, 0, 0, 0.4) 5px 4px 17px;
+
+}
+
+.bg-layers {
+    -webkit-animation: filter-animation 4s infinite;
+    animation: filter-animation 4s infinite;
+}
+
+.bg-scale {
+    -webkit-animation: filter-animation 8s infinite;
+    animation: filter-scale 8s infinite;
+}
+  
+@-webkit-keyframes filter-animation {
+    0% {
+      -webkit-filter: hue-rotate(0deg);
+    }
+    50% {
+      -webkit-filter: hue-rotate(45deg);
+    }
+    
+    100% {
+      -webkit-filter: hue-rotate(0deg);
+    }
+}
+  
+@keyframes filter-animation {
+    0% {
+      filter: hue-rotate(0deg);
+    }
+    50% {
+      filter: hue-rotate(45deg);
+    }
+    100% {
+      filter: hue-rotate(0deg);
+    }
+}
+
+@keyframes filter-scale {
+    0% {
+      transform:scale(1);
+    }
+    50% {
+      transform:scale(1.4);
+    }
+    100% {
+        transform:scale(.8);
+    }
+}
